@@ -18,4 +18,14 @@ class Post extends Model
     {
         return $this->created_at->format('d/m/Y');
     }
+
+    /**
+     * Get the user that owns the Post
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
